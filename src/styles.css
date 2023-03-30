@@ -1,0 +1,10 @@
+body {
+  background-color: whitesmoke;
+  font: 14px Verdana, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0 0 10px 0;
+}

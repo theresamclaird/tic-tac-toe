@@ -1,0 +1,9 @@
+.board-container {
+  box-shadow: 1px 1px 20px LightGray;
+  margin-top: 10px;
+}
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}

@@ -1,0 +1,33 @@
+.square {
+  background-image: linear-gradient(to bottom right, darkgrey, å lightgrey);
+  border: 1px solid Indigo;
+  float: left;
+  font: 40px Marker Felt, fantasy;
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 50px;
+}
+
+.square:first-child {
+  border-left: none;
+}
+.square:last-child {
+  border-right: none;
+}
+.board-row:first-child .square {
+  border-top: none;
+}
+.board-row:last-child .square {
+  border-bottom: none;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.square.pre-mark {
+  background-color: WhiteSmoke;
+  cursor: pointer;
+  color: Thistle;
+}

@@ -1,0 +1,25 @@
+.move-history {
+  padding-left: 20px;
+}
+
+.move-history ol {
+  padding-left: 20px;
+}
+
+.history-step {
+  margin-bottom: 10px;
+}
+
+.history-button {
+  background-color: Thistle;
+  border: solid 1px Indigo;
+  border-radius: 5px;
+  color: Black;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+.history-button:hover {
+  background-color: Indigo;
+  box-shadow: 1px 1px 10px DarkGray;
+  color: White;
+}
