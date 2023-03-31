@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GameContext } from "../GameContext";
 import "./styles.css";
 
-export default ({ stepsCount, jumpToStep }) => {
+export default () => {
+  const { stepsCount, jumpToStep } = useContext(GameContext);
   let stepLinks = [];
   for (let stepIndex = 0; stepIndex < stepsCount; stepIndex++) {
     const desc = stepIndex ? "Go to step #" + stepIndex : "Game Start";

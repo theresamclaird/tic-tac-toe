@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GameContext } from "../GameContext";
 import Square from "../Square";
 import "./styles.css";
 
-export default ({ squares, handleSquareClick }) => {
+export default () => {
+  const { gridSize, squares, handleSquareClick } = useContext(GameContext);
   const renderSquare = (squareIndex) => (
     <Square
       key={squareIndex}
@@ -12,7 +14,6 @@ export default ({ squares, handleSquareClick }) => {
   );
 
   let rows = [];
-  const gridSize = Math.sqrt(squares.length);
   for (let rowIndex = 0; rowIndex < gridSize; rowIndex++) {
     let columns = [];
     for (let columnIndex = 0; columnIndex < gridSize; columnIndex++) {

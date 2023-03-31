@@ -1,6 +1,16 @@
 body {
   background-color: whitesmoke;
   font: 14px Verdana, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 h1 {
