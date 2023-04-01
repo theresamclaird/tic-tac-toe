@@ -5,16 +5,35 @@ body {
   padding: 0;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-}
-
 h1 {
   font-size: 16px;
   font-weight: normal;
   margin: 0 0 10px 0;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  padding: 0.333rem;
+  border: solid 1px #999;
+  background-color: #eee;
+  border-radius: 0.33rem;
+}
+
+.button:disabled {
+  cursor: default;
+}
+
+.action-icon {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+p {
+  padding: 0;
+  margin: 0;
 }

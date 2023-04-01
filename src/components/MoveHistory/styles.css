@@ -1,5 +1,13 @@
 .move-history {
-  padding-left: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100svh;
+  background-color: ivory;
+  padding: 1rem;
+  padding-top: 4rem;
+  margin: 0;
+  box-shadow: 0 0 5px #ccc;
 }
 
 .move-history ol {
@@ -8,18 +16,4 @@
 
 .history-step {
   margin-bottom: 10px;
-}
-
-.history-button {
-  background-color: Thistle;
-  border: solid 1px Indigo;
-  border-radius: 5px;
-  color: Black;
-  cursor: pointer;
-  padding: 5px 10px;
-}
-.history-button:hover {
-  background-color: Indigo;
-  box-shadow: 1px 1px 10px DarkGray;
-  color: White;
 }

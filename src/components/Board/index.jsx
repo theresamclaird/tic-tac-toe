@@ -4,7 +4,7 @@ import Square from "../Square";
 import "./styles.css";
 
 export default () => {
-  const { gridSize, squares, handleSquareClick } = useContext(GameContext);
+  const { gridSize, squares, handleSquareClick, resetGame, stepNumber } = useContext(GameContext);
   const renderSquare = (squareIndex) => (
     <Square
       key={squareIndex}
@@ -26,5 +26,10 @@ export default () => {
     );
   }
 
-  return <div className="board-container">{rows}</div>;
+  return (
+    <div className="game-surface">
+      <div className="grid-container">{rows}</div>
+      <button className="button" disabled={stepNumber === 0} onClick={() => resetGame()}>Reset</button>
+    </div>
+  );
 };

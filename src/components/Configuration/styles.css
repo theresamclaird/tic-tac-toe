@@ -1,6 +1,6 @@
 .panel-overlay {
     position: absolute;
-    z-index: 1;
+    z-index: 15;
     left: 0;
     top:  0;
     width: 100vw;
@@ -9,11 +9,12 @@
 
 .panel {
     position: absolute;
-    z-index: 2;
+    z-index: 20;
     left: 2rem;
     top: 2rem;
     background-color: #fff;
     border-radius: 0.33rem;
+    overflow: hidden;
     box-shadow: 0 0 15px #ccc;
     padding: 0;
     margin: 0;
@@ -50,11 +51,8 @@
     width: 2.5rem;
 }
 
-.player-symbol {
-    margin-left: 1rem;
-}
-
-.new-player-button {
-    border: none;
-    cursor: pointer;
+.player-symbols {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 0 1rem;
 }

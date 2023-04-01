@@ -3,7 +3,9 @@ import { GameContext } from '../GameContext';
 import "./styles.css";
 
 const Configuration = ({ close }) => {
-    const { gridSize, setGridSize, players, setPlayers } = useContext(GameContext);
+    const {
+        gridSize, setGridSize, players, setPlayers, showHistory, setShowHistory
+    } = useContext(GameContext);
     const [newPlayerSymbol, setNewPlayerSymbol] = useState("");
 
     const handleChangeGridSize = e => {
@@ -29,14 +31,36 @@ const Configuration = ({ close }) => {
         setNewPlayerSymbol("");
     };
 
+    const removePlayerAtIndex = playerToRemove => (
+        setPlayers(players.filter(player => player !== playerToRemove))
+    );
+
     return (
         <>
             <div className="panel">
                 <div className="panel-title">Configuration Panel</div>
                 <div className="panel-content">
-                    <label className="input-field">Grid Size: <input className="input-grid-size" type="number" value={gridSize} onChange={handleChangeGridSize} /></label>
                     <label className="input-field">
-                        Players:
+                        <span>Show History:</span>
+                        <input type="checkbox" checked={showHistory} onChange={e => setShowHistory(e.target.checked)} />
+                    </label>
+                    <label className="input-field">
+                        <span>Grid Size:</span>
+                        <input className="input-grid-size" type="number" value={gridSize} onChange={handleChangeGridSize} />
+                    </label>
+                    <p>Players:</p>
+                    <ul className="player-symbols">
+                    {players.map(player => (
+                        <div key={player} className="player-symbol input-field">
+                            {player}
+                            <button onClick={() => removePlayerAtIndex(player)} className="action-icon">
+                                <span role="img" aria-label="Remove Player">➖</span>
+                            </button>
+                        </div>
+                    ))}
+                    </ul>
+                    <label className="input-field">
+                        <span>Add Player:</span>
                         <input
                             className="input-player-symbol"
                             value={newPlayerSymbol}
@@ -44,9 +68,10 @@ const Configuration = ({ close }) => {
                             onKeyDown={e => e.key === "Enter" && handleAddNewPlayerSymbol()}
                             type="text"
                         />
-                        <button onClick={handleAddNewPlayerSymbol} className="new-player-button">+</button>
+                        <button disabled={!newPlayerSymbol} onClick={handleAddNewPlayerSymbol} className="action-icon">
+                            <span role="img" aria-label="Add Player">➕</span>
+                        </button>
                     </label>
-                    {players.map(player => <div key={player} className="player-symbol">{player}</div>)}
                 </div>
             </div>
             <div className="panel-overlay" onClick={() => close()} />
